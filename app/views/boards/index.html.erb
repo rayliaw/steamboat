@@ -8,6 +8,7 @@
       <th>Board</th>
       <th>Description</th>
       <th>Time</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -17,6 +18,7 @@
         <td><%= board.name %></td>
         <td><%= board.description %></td>
         <td><%= board.event %></td>
+        <td><%= link_to 'Open', board_path(board) %></td>
       </tr>
     <% end %>
   </tbody>
