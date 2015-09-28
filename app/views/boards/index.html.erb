@@ -18,7 +18,7 @@
         <td><%= board.name %></td>
         <td><%= board.description %></td>
         <td><%= board.event %></td>
-        <td><%= link_to 'Open', board_path(board) %></td>
+        <td><%= link_to 'Open', board_path(board) %> <%= link_to 'Edit', edit_board_path(board) %> <%= link_to 'Delete', board_path(board), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>

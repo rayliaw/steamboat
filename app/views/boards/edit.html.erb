@@ -1,0 +1,7 @@
+<%= simple_form_for @board do |f| %>
+  <%= f.input :name, label: false, input_html: {placeholder: "Board Name"} %>
+  <%= f.input :description, label: false, as: :text, input_html: {placeholder: "Description"} %>
+  <%= f.input :event, label: false, input_html: {placeholder: "Time"} %>
+  <%= f.submit 'Submit'.html_safe, class: 'btn btn-lg btn-primary' %>
+  <%= link_to 'Cancel', :back, class: 'btn btn-lg btn-default' %>
+<% end %>
