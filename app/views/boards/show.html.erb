@@ -1,1 +1,24 @@
 <h1><%= @board.name %></h1>
+
+<ul class="button-group">
+  <li><%= link_to 'New Category', new_board_category_path(@board), class: 'small button' %></li>
+</ul>
+
+<% @board.categories.each do |category| %>
+
+<h3><%= category.name %></h3>
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Item</td>
+    </tr>
+  </tbody>
+</table>
+
+<% end %>

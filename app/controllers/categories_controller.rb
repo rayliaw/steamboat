@@ -1,22 +1,21 @@
 class CategoriesController < ApplicationController
-  def index
-    @categories = Category.all
-  end
-
   def show
     @category = Category.find(params[:id])
   end
 
   def new
-    @category = Category.new
+    @board = Board.find(params[:board_id])
+    @category = @board.categories.build
   end
 
   def edit
-    @category = Category.find(params[:id])
+    @board = Board.find(params[:board_id])
+    @category = @board.categories.find(params[:id])
   end
 
   def create
-    @category = Category.new(category_params)
+    @board = Board.find(params[:board_id])
+    @category = @board.categories.create(category_params)
     if @category.save
       redirect_to @board
     else
@@ -34,7 +33,8 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:id])
+    @board = Board.find(params[:board_id])
+    @category = @board.categories.find(params[:id])
     @category.destroy
     redirect_to @board
   end
