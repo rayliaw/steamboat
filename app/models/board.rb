@@ -11,5 +11,5 @@
 #
 
 class Board < ActiveRecord::Base
-  has_many :categorys
+  has_many :categories
 end

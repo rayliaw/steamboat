@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :boards do
-    resources :categorys
+    resources :categories
   end
 
   get 'test', to: 'static_pages#test', as: :test
